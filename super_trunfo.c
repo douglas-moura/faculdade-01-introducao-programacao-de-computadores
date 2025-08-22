@@ -15,9 +15,11 @@ int main () {
 
     printf("Digite o código da primeira cidade: ");
     scanf("%s", codigo_1);
+    while (getchar() != '\n'); // Limpa o buffer
 
     printf("Digite o nome da primeira cidade: ");
-    scanf("%s", cidade_1);
+    fgets(cidade_1, sizeof(cidade_1), stdin);
+    cidade_1[strcspn(cidade_1, "\n")] = 0; // Remove o '\n' do final
 
     printf("Digite a população da primeira cidade: ");
     scanf("%ld", &populacao_1);
@@ -44,9 +46,11 @@ int main () {
 
     printf("Digite o código da segunda cidade: ");
     scanf("%s", codigo_2);
+    while (getchar() != '\n'); // Limpa o buffer
 
     printf("Digite o nome da segunda cidade: ");
-    scanf("%s", cidade_2);
+    fgets(cidade_2, sizeof(cidade_2), stdin);
+    cidade_1[strcspn(cidade_1, "\n")] = 0; // Remove o '\n' do final
 
     printf("Digite a população da segunda cidade: ");
     scanf("%ld", &populacao_2);
